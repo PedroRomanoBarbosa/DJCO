@@ -4,38 +4,49 @@ using UnityEngine;
 
 public class PlayerMovement : MonoBehaviour {
 	private CharacterController controller;
-	private float speed = 5f;
 	private float verticalVelocity = 0.0f;
-	private float gravity = 9.8f;
 	private float timer = 0.0f;
+	private bool jumping = false;
 	private Vector3 moveVector;
 
-	// Use this for initialization
+	public float speed = 10f;
+	public float jumpSpeed = 10f;
+	public float gravity = 9.8f;
+
 	void Start () {
 		controller = GetComponent<CharacterController> ();
 	}
-	
-	// Update is called once per frame
+
 	void Update () {
 		if (controller.isGrounded) {
 			verticalVelocity = 0.0f;
 			timer = 0.0f;
+			jumping = false;
 		} else {
-			verticalVelocity -= gravity * Time.deltaTime;
+			verticalVelocity += -gravity * Time.deltaTime;
 		}
 		moveVector = Vector3.zero;
 
-		// X - Left and Right
+		// STRAFE
 		moveVector.x = Input.GetAxisRaw("Horizontal") * speed;
 
-		// Y - Up and Down
-		if (Input.GetKey ("space")) {
+		// JUMP
+		if(Input.GetKeyDown("space")) {
+			jumping = true;
+		}
+		if (jumping) {
 			timer += Time.deltaTime;
-			if (timer <= 0.2f) {
-				moveVector.y += 10;
+			if (timer <= 0.1f) {
+				if (Input.GetKey("space")) {
+					verticalVelocity += jumpFunction (timer / 0.25f) * Time.deltaTime * jumpSpeed;
+				}
 			}
 		}
 		moveVector.y += verticalVelocity;
 		controller.Move (moveVector * Time.deltaTime);
+	}
+
+	float jumpFunction(float t) {
+		return -t * t + 1;
 	}
 }
