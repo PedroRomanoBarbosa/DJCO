@@ -1,15 +1,28 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
-public class WorldMovement : MonoBehaviour {
-	public float speed = 5f;
+public class WorldMovement : MonoBehaviour
+{
+    public float speed = 5f;
+    public bool isMoving = false;
 
-	void Start () {
-		
-	}
+    public Text textPressToBegin;
 
-	void Update () {
-		transform.Translate (Vector3.back * speed * Time.deltaTime);
-	}
+    void Start()
+    {
+    }
+
+    void Update()
+    {
+        if(isMoving)
+            transform.Translate(Vector3.back * speed * Time.deltaTime);
+        
+        if (!isMoving && Input.anyKeyDown)
+        {
+            isMoving = true;
+            textPressToBegin.text = "";
+        }
+    }
 }
