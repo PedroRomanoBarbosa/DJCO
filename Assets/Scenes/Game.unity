@@ -239,7 +239,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "Carrega num but\xE3o para come\xE7ar a correr"
+  m_Text: "Carrega num bot\xE3o para come\xE7ar a correr"
 --- !u!222 &416857813
 CanvasRenderer:
   m_ObjectHideFlags: 0
