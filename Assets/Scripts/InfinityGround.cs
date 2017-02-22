@@ -5,7 +5,7 @@ using UnityEngine;
 public class InfinityGround : MonoBehaviour
 {
     private float GroundLength = 50f;
-    private float GroundSpeed = 5f;
+    private float GroundSpeed = 20f;
     public GameObject Ground;
 
     void Update()
