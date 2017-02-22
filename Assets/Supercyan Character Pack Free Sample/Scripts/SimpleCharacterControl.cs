@@ -179,5 +179,19 @@ public class SimpleCharacterControl : MonoBehaviour {
         {
             m_animator.SetTrigger("Jump");
         }
+
+        if (Input.GetKeyDown("a"))
+        {
+            transform.position = new Vector3(-3, 0, 0);
+        }
+        if(Input.GetKeyDown("s"))
+        { 
+            transform.position = new Vector3(0, 0, 0);
+        }
+        if (Input.GetKeyDown("d"))
+        {
+            transform.position = new Vector3(3, 0, 0);
+        }
+
     }
 }
