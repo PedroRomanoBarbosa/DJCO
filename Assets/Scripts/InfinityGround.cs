@@ -5,19 +5,28 @@ using UnityEngine;
 public class InfinityGround : MonoBehaviour
 {
     private float GroundLength = 50f;
-    private float GroundSpeed = 5f;
-    public GameObject Ground;
+
+    private GameGlobals game;
+
+    void Start()
+    {
+        game = GameObject.Find("GameController").GetComponent<GameGlobals>();
+    }
+
 
     void Update()
     {
-        Vector3 GroundPos = Ground.transform.position;
-        GroundPos.z -= GroundSpeed * Time.deltaTime;
-
-        if (GroundPos.z < -GroundLength / 2)
+        if (game.isMoving)
         {
-            GroundPos.z += GroundLength;
-        }
+            Vector3 GroundPos = transform.position;
+            GroundPos.z -= game.speed * Time.deltaTime;
 
-        Ground.transform.position = GroundPos;
+            if (GroundPos.z < -GroundLength / 2)
+            {
+                GroundPos.z += GroundLength;
+            }
+
+            transform.position = GroundPos;
+        }
     }
 }
