@@ -24,44 +24,80 @@ public class PlayerMovement : MonoBehaviour {
     }
 
 	void Update () {
+        if (game.isMoving)
+        {
+            animator.SetFloat("MoveSpeed", game.speed);
 
-        animator.SetFloat("MoveSpeed", game.speed);
+            //Set Animations
+            animationLogic();
 
-        if (controller.isGrounded) {
-			verticalVelocity = 0.0f;
-			timer = 0.0f;
-			jumping = false;
-            if(!animator.GetBool("Grounded"))
-                animator.SetBool("Grounded", true);
-		} else {
-			verticalVelocity += -gravity * Time.deltaTime;
-		}
-		moveVector = Vector3.zero;
+            //Movement
+            movementLogic();
+        } else 
+        {
+            //moveVector should not be changed while game is paused.
 
-        // STRAFE
-        moveVector.x = Input.GetAxisRaw("Horizontal") * speed;
-        if (jumping)
-            moveVector.x *= 0.2f;
-
-        // JUMP
-        if (Input.GetKeyDown("space")) {
-			jumping = true;
-		}
-		if (jumping) {
-            if (animator.GetBool("Grounded"))
-                animator.SetBool("Grounded", false);
-            timer += Time.deltaTime;
-			if (timer <= 0.1f) {
-				if (Input.GetKey("space")) {
-					verticalVelocity += jumpFunction (timer / 0.25f) * Time.deltaTime * jumpSpeed;
-				}
-			}
-		}
-		moveVector.y += verticalVelocity;
-		controller.Move (moveVector * Time.deltaTime);
-	}
+            animator.SetFloat("MoveSpeed", 0);
+        }
+    }
 
 	float jumpFunction(float t) {
 		return -t * t + 1;
 	}
+
+    void animationLogic()
+    {
+        if (controller.isGrounded)
+        {
+            if (!animator.GetBool("Grounded"))
+                animator.SetBool("Grounded", true);
+        }
+        if(jumping)
+            if (animator.GetBool("Grounded"))
+                animator.SetBool("Grounded", false);
+    }
+
+    void movementLogic()
+    {
+        //Get MoveVector
+        if (controller.isGrounded)
+        {
+            verticalVelocity = 0.0f;
+            timer = 0.0f;
+            jumping = false;
+        }
+        else
+        {
+            verticalVelocity += -gravity * Time.deltaTime;
+        }
+        moveVector = Vector3.zero;
+
+
+        // STRAFE
+        moveVector.x = Input.GetAxisRaw("Horizontal") * speed;
+            
+
+        // JUMP
+        if (Input.GetKeyDown("space"))
+        {
+            jumping = true;
+        }
+        if (jumping)
+        {
+            //Slower Aerial Movement
+            moveVector.x *= 0.2f;
+
+            timer += Time.deltaTime;
+            if (timer <= 0.1f)
+            {
+                if (Input.GetKey("space"))
+                {
+                    verticalVelocity += jumpFunction(timer / 0.25f) * Time.deltaTime * jumpSpeed;
+                }
+            }
+        }
+
+        moveVector.y += verticalVelocity;
+        controller.Move(moveVector * Time.deltaTime);
+    }
 }
