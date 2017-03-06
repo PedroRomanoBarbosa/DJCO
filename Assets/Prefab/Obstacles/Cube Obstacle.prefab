@@ -132,4 +132,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a0194e3c64880cf40bf433168632a4b1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  despawnPlane: -30
+  despawnPlane: -60

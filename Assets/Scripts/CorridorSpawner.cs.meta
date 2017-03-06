@@ -1,13 +1,13 @@
 fileFormatVersion: 2
 guid: 27ee99a8bc1f883429f204870a424332
-timeCreated: 1488823465
+timeCreated: 1488830303
 licenseType: Free
 MonoImporter:
   serializedVersion: 2
   defaultReferences:
-  - platformPrefab: {fileID: 1668685895706910, guid: 50d0e766a65f6ae4d9d2093f4b6f50ac,
+  - platformPrefab: {fileID: 1807086085614338, guid: cc6a5a90b2249e2439bdacd0dade48cd,
       type: 2}
-  - emptyCorridorPrefab: {fileID: 1858501146467820, guid: 30ee44c8ee2cebf4a8ce8b7af5f872b2,
+  - emptyCorridorPrefab: {fileID: 1553020452658990, guid: 77665c70e45300643a1e1d1cf46ef4ff,
       type: 2}
   executionOrder: 0
   icon: {instanceID: 0}

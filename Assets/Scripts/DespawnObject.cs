@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class DespawnObject : MonoBehaviour {
 
-    public float despawnPlane = -30f;
+    public float despawnPlane = -60f;
 
 	// Use this for initialization
 	void Start () {
