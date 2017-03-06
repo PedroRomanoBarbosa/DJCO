@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class SpawnObstacle : MonoBehaviour
+public class SpawnCubeObstacle : MonoBehaviour
 {
     private int[] tracks = {-3,0,3};
     public float spawningTime = 10.0f;
@@ -19,19 +19,18 @@ public class SpawnObstacle : MonoBehaviour
     {
         if (game.isMoving)
         {
-            CreateObstacle();
+            spawningTime -= Time.deltaTime;
+            if (spawningTime <= 0)
+            {
+                CreateObstacle();
+            }
         }
     }
 
     void CreateObstacle()
-    {
-        spawningTime -= Time.deltaTime;
-
-        if (spawningTime <= 0)
-        {
-            GameObject newObstacle = Instantiate(obstaclePrefab, new Vector3(tracks[Random.Range(0, 2)], 0, 35), Quaternion.identity);
-            newObstacle.transform.parent = GameObject.Find("Obstacles").transform;
-            spawningTime = 5.0f;
-        }
+    {  
+        GameObject newObstacle = Instantiate(obstaclePrefab, new Vector3(tracks[Random.Range(0, 2)], 0, 35), Quaternion.identity);
+        newObstacle.transform.parent = GameObject.Find("Obstacles").transform;
+        spawningTime = 5.0f;
     }
 }

@@ -1,0 +1,16 @@
+fileFormatVersion: 2
+guid: 27ee99a8bc1f883429f204870a424332
+timeCreated: 1488823465
+licenseType: Free
+MonoImporter:
+  serializedVersion: 2
+  defaultReferences:
+  - platformPrefab: {fileID: 1668685895706910, guid: 50d0e766a65f6ae4d9d2093f4b6f50ac,
+      type: 2}
+  - emptyCorridorPrefab: {fileID: 1858501146467820, guid: 30ee44c8ee2cebf4a8ce8b7af5f872b2,
+      type: 2}
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

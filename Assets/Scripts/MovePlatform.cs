@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class InfinityGround : MonoBehaviour
+public class MovePlatform : MonoBehaviour
 {
     private float GroundLength = 50f;
 
