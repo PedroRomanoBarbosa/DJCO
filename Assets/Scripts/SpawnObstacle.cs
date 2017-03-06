@@ -29,7 +29,8 @@ public class SpawnObstacle : MonoBehaviour
 
         if (spawningTime <= 0)
         {
-            Instantiate(obstaclePrefab, new Vector3(tracks[Random.Range(0, 2)], 0, 35), Quaternion.identity);
+            GameObject newObstacle = Instantiate(obstaclePrefab, new Vector3(tracks[Random.Range(0, 2)], 0, 35), Quaternion.identity);
+            newObstacle.transform.parent = GameObject.Find("Obstacles").transform;
             spawningTime = 5.0f;
         }
     }
