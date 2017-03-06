@@ -20,12 +20,6 @@ public class InfinityGround : MonoBehaviour
         {
             Vector3 GroundPos = transform.position;
             GroundPos.z -= game.speed * Time.deltaTime;
-
-            if (GroundPos.z < -GroundLength / 2)
-            {
-                GroundPos.z += GroundLength;
-            }
-
             transform.position = GroundPos;
         }
     }

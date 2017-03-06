@@ -22,17 +22,10 @@ public class MoveObstacle : MonoBehaviour
 
     void Update()
     {
-        if (transform.position.z < -20)
-        {
-            Destroy(gameObject);
-        }
+        if (game.isMoving)
+            movement = new Vector3(speed.x * direction.x, speed.y * direction.y, speed.z * direction.z);
         else
-        {
-            if (game.isMoving)
-                movement = new Vector3(speed.x * direction.x, speed.y * direction.y, speed.z * direction.z);
-            else
-                movement = new Vector3(0, 0, 0);
-        }
+            movement = new Vector3(0, 0, 0);
     }
 
     void FixedUpdate()
