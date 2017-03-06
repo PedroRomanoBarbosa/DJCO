@@ -38,11 +38,13 @@ public class PlayerMovement : MonoBehaviour {
 		}
 		moveVector = Vector3.zero;
 
-		// STRAFE
-moveVector.x = Input.GetAxisRaw("Horizontal") * speed;
+        // STRAFE
+        moveVector.x = Input.GetAxisRaw("Horizontal") * speed;
+        if (jumping)
+            moveVector.x *= 0.2f;
 
-		// JUMP
-		if(Input.GetKeyDown("space")) {
+        // JUMP
+        if (Input.GetKeyDown("space")) {
 			jumping = true;
 		}
 		if (jumping) {
