@@ -74,7 +74,13 @@ public class PlayerMovement : MonoBehaviour {
 
 
         // STRAFE
-        moveVector.x = Input.GetAxisRaw("Horizontal") * speed;
+
+        //
+        //)
+
+        if (Input.GetAxisRaw("Horizontal") <= 0 && transform.position.x >= -5
+                || Input.GetAxisRaw("Horizontal") >= 0 && transform.position.x <= 5)
+            moveVector.x = Input.GetAxisRaw("Horizontal") * speed;
             
 
         // JUMP
