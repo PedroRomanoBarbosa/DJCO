@@ -57,6 +57,7 @@ GameObject:
   - component: {fileID: 4144785247902354}
   - component: {fileID: 114338732961488302}
   - component: {fileID: 114659046393220290}
+  - component: {fileID: 114567339632757024}
   m_Layer: 0
   m_Name: Initial Corridor
   m_TagString: Untagged
@@ -332,6 +333,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5b934355d894bff449d24ff17b2b7b17, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &114567339632757024
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1325695395695454}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a7a194e355e75fd4f80a9580af99025b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CorridorLength: 40
 --- !u!114 &114659046393220290
 MonoBehaviour:
   m_ObjectHideFlags: 1
