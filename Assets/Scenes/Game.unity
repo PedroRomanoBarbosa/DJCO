@@ -245,7 +245,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 6
-  jumpSpeed: 65
+  jumpSpeed: 70
   gravity: 10
 --- !u!1 &416857810
 GameObject:
@@ -380,7 +380,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   spawningTime: 10
-  obstaclePrefab: {fileID: 1263414168957902, guid: 36a41a84b022a864a9f9a87b382b86f2,
+  obstaclePrefab: {fileID: 1460428938454664, guid: 3fb0beeafd1e8db49a470d18543693a9,
     type: 2}
 --- !u!4 &459812868
 Transform:
