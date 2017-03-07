@@ -12,6 +12,8 @@ public class CorridorSpawner : MonoBehaviour
     public GameObject initialCorridor;
     public GameObject[] corridorPrefabs;
 
+    public int coridorSpawnPlane = 95;
+
     void Start()
     {
         //Create Two Empty Corridors.
@@ -22,7 +24,7 @@ public class CorridorSpawner : MonoBehaviour
 
     void FixedUpdate()
     {
-        if(latestCorridor.transform.position.z < 95)
+        if(latestCorridor.transform.position.z < coridorSpawnPlane)
         {
             latestCorridor = CreateRandomSection(latestCorridor);
         }

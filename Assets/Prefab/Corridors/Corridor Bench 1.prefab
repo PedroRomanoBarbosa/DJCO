@@ -72,7 +72,6 @@ GameObject:
   - component: {fileID: 65749603484380182}
   - component: {fileID: 65499061292962534}
   - component: {fileID: 114639079559802278}
-  - component: {fileID: 114830537408136848}
   - component: {fileID: 114101434677686868}
   m_Layer: 0
   m_Name: Corridor Bench 1
@@ -275,14 +274,3 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   CorridorLength: 20
---- !u!114 &114830537408136848
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1792504991827990}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5b934355d894bff449d24ff17b2b7b17, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 

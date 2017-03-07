@@ -41,7 +41,6 @@ GameObject:
   - component: {fileID: 65805444011705912}
   - component: {fileID: 114336667149663268}
   - component: {fileID: 114917618831434788}
-  - component: {fileID: 114200011924653838}
   m_Layer: 0
   m_Name: Corridor Bench 3
   m_TagString: Corridor
@@ -251,17 +250,6 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1, y: 20, z: 20}
   m_Center: {x: -9.5, y: 9.5, z: 0}
---- !u!114 &114200011924653838
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1559571904136612}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5b934355d894bff449d24ff17b2b7b17, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &114336667149663268
 MonoBehaviour:
   m_ObjectHideFlags: 1

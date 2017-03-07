@@ -54,7 +54,6 @@ GameObject:
   - component: {fileID: 65612092437415766}
   - component: {fileID: 65815532848753870}
   - component: {fileID: 65477638095817772}
-  - component: {fileID: 114804555937218874}
   - component: {fileID: 114393976892566498}
   - component: {fileID: 114707532220800520}
   m_Layer: 0
@@ -275,14 +274,3 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   CorridorLength: 20
---- !u!114 &114804555937218874
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1125271356461278}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5b934355d894bff449d24ff17b2b7b17, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
