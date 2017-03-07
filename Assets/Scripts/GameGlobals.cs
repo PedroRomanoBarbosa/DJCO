@@ -9,6 +9,7 @@ public class GameGlobals : MonoBehaviour {
     public bool isMoving = false;
     public Text textPressToBegin;
     public int score = 0;
+    public int lives = 3;
 
     void Start()
     {

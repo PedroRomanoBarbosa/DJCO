@@ -103,6 +103,8 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4448309430453106}
+  - component: {fileID: 65875892372737924}
+  - component: {fileID: 114630092676914502}
   m_Layer: 0
   m_Name: column
   m_TagString: Untagged
@@ -308,6 +310,18 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 18, y: 1, z: 20}
   m_Center: {x: -0.5, y: 0, z: 0}
+--- !u!65 &65875892372737924
+BoxCollider:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1991358288751334}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 2, y: 10, z: 2}
+  m_Center: {x: 0, y: 5, z: 0}
 --- !u!114 &114224256637423734
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -320,6 +334,17 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   despawnPlane: -60
+--- !u!114 &114630092676914502
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1991358288751334}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 114c14a5f30299d48bf402c134ed25df, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &114948116200721952
 MonoBehaviour:
   m_ObjectHideFlags: 1

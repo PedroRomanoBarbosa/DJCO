@@ -421,6 +421,7 @@ MonoBehaviour:
   isMoving: 0
   textPressToBegin: {fileID: 416857812}
   score: 0
+  lives: 3
 --- !u!114 &459812870
 MonoBehaviour:
   m_ObjectHideFlags: 0
