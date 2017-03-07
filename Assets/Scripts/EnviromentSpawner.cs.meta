@@ -1,0 +1,17 @@
+fileFormatVersion: 2
+guid: e9246a83ce1fa1f438806669eac8e538
+timeCreated: 1488915514
+licenseType: Free
+MonoImporter:
+  serializedVersion: 2
+  defaultReferences:
+  - grassPrefab: {fileID: 1029603062696258, guid: 0bf46b0608581a140aeb81b693993c49,
+      type: 2}
+  - treePrefab: {fileID: 1279214466583910, guid: fe842431f30314927b0cb41489e8e99b,
+      type: 2}
+  - initialGrassPlane: {instanceID: 0}
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

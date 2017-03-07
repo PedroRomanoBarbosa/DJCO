@@ -29,7 +29,7 @@ public class SpawnECTS : MonoBehaviour
     void CreateObstacle()
     {  
         GameObject newObstacle = Instantiate(ECTPrefab, new Vector3(Random.Range(-5f, 5f), 1.5f, 100), ECTPrefab.transform.rotation);
-        newObstacle.transform.parent = GameObject.Find("Obstacles").transform;
+        newObstacle.transform.parent = gameObject.transform;
         spawningTime = 5.0f;
     }
 }
