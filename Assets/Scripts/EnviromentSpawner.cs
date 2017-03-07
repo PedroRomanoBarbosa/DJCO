@@ -64,7 +64,26 @@ public class EnviromentSpawner : MonoBehaviour {
 
     void CreateTree()
     {
-        GameObject newTree = Instantiate(treePrefab, new Vector3(Random.Range(-23f,-13f), 3f, treeSpawnPlane), Quaternion.identity);
+        
+        GameObject newTree;
+        float size_Seed = Random.Range(0f, 1f);
+
+        if (size_Seed <= 0.40f) //Small tree
+        {
+            newTree = Instantiate(treePrefab, new Vector3(Random.Range(-24f, -11.5f), 0, treeSpawnPlane), Quaternion.AngleAxis(Random.Range(0f, 360f), Vector3.up));
+            newTree.transform.localScale = Vector3.one * 0.5f;
+        }
+        else if(size_Seed <= 0.80f) //Medium Tree
+        {
+            newTree = Instantiate(treePrefab, new Vector3(Random.Range(-22f, -13f), 0, treeSpawnPlane), Quaternion.AngleAxis(Random.Range(0f, 360f), Vector3.up));
+            newTree.transform.localScale = Vector3.one * 1.5f;
+        }
+        else    //Large Tree
+        {
+            newTree = Instantiate(treePrefab, new Vector3(-18, 0, treeSpawnPlane), Quaternion.AngleAxis(Random.Range(0f, 360f), Vector3.up));
+            newTree.transform.localScale = Vector3.one * 2.5f;
+        }
+            
         newTree.transform.parent = gameObject.transform;
         treeSpawnTimer = treeDistance + Random.Range(-treeDistance/2, treeDistance*1.5f);
     }
