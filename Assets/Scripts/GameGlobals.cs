@@ -8,6 +8,7 @@ public class GameGlobals : MonoBehaviour {
     public float speed = 10f;
     public bool isMoving = false;
     public Text textPressToBegin;
+    public int score = 0;
 
     void Start()
     {
