@@ -42,17 +42,17 @@ public class CorridorSpawner : MonoBehaviour
     {
         //Para criar os dois corredores vazios no inicio.
         GameObject newEmptyCorridor = Instantiate(emptyCorridorPrefab, new Vector3(0,0f,position), Quaternion.identity);
-        newEmptyCorridor.transform.parent = GameObject.Find("Corridors").transform;
+        newEmptyCorridor.transform.parent = GameObject.Find(gameObject.name).transform;
         return newEmptyCorridor;
     }
 
     GameObject CreateSection(GameObject previous, GameObject newSectionPrefab)
     {
-        float previous_edge = previous.transform.position.z + previous.GetComponent<CorridorVariables>().CorridorLength / 2;
-        float newPosition = previous_edge + newSectionPrefab.GetComponent<CorridorVariables>().CorridorLength/2;
+        float previous_edge = previous.transform.position.z + previous.GetComponent<ObjectVariables>().CorridorLength / 2;
+        float newPosition = previous_edge + newSectionPrefab.GetComponent<ObjectVariables>().CorridorLength/2;
 
         GameObject newSection = Instantiate(newSectionPrefab, new Vector3(0, 0f, newPosition), Quaternion.identity);
-        newSection.transform.parent = GameObject.Find("Corridors").transform;
+        newSection.transform.parent = GameObject.Find(gameObject.name).transform;
 
         return newSection;
     }
