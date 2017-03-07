@@ -10,18 +10,14 @@ public class CorridorSpawner : MonoBehaviour
     //Vars
     private GameObject latestCorridor;
     public GameObject initialCorridor;
+    public GameObject[] corridorPrefabs;
 
     void Start()
     {
-        //Create Two Corridors.
-        float previous_edge = initialCorridor.transform.position.z + initialCorridor.GetComponent<CorridorVariables>().CorridorLength / 2;
-        GameObject newSection = CreateSection_EmptySection(previous_edge + emptyCorridorPrefab.GetComponent<CorridorVariables>().CorridorLength / 2);
-        newSection.transform.parent = GameObject.Find("Corridors").transform;
-
-        previous_edge = newSection.transform.position.z + newSection.GetComponent<CorridorVariables>().CorridorLength / 2;
-        latestCorridor = CreateSection_EmptySection(previous_edge + emptyCorridorPrefab.GetComponent<CorridorVariables>().CorridorLength / 2);
-        latestCorridor.transform.parent = GameObject.Find("Corridors").transform;
-
+        //Create Two Empty Corridors.
+        latestCorridor = CreateSection(initialCorridor, emptyCorridorPrefab);
+        latestCorridor = CreateSection(latestCorridor, emptyCorridorPrefab);
+        
     }
 
     void FixedUpdate()
@@ -34,15 +30,9 @@ public class CorridorSpawner : MonoBehaviour
     
     GameObject CreateRandomSection(GameObject latest)
     {
-        float previous_edge = latest.transform.position.z + latest.GetComponent<CorridorVariables>().CorridorLength/2;
+        GameObject chosen = corridorPrefabs[Random.Range(0, corridorPrefabs.Length)];
 
-        //--TODO--
-        //Aqui ele deve escolher um prefab aleatoriamente entre os disponiveis.
-        GameObject chosen = emptyCorridorPrefab;
-        //--TODO--
-
-        GameObject newSection = CreateSection_EmptySection(previous_edge + chosen.GetComponent<CorridorVariables>().CorridorLength/2);
-        newSection.transform.parent = GameObject.Find("Corridors").transform;
+        GameObject newSection = CreateSection(latestCorridor, chosen);
         return newSection;
     }
 
@@ -53,5 +43,16 @@ public class CorridorSpawner : MonoBehaviour
         newEmptyCorridor.transform.parent = GameObject.Find("Corridors").transform;
         return newEmptyCorridor;
     }
-    
+
+    GameObject CreateSection(GameObject previous, GameObject newSectionPrefab)
+    {
+        float previous_edge = previous.transform.position.z + previous.GetComponent<CorridorVariables>().CorridorLength / 2;
+        float newPosition = previous_edge + newSectionPrefab.GetComponent<CorridorVariables>().CorridorLength/2;
+
+        GameObject newSection = Instantiate(newSectionPrefab, new Vector3(0, 0f, newPosition), Quaternion.identity);
+        newSection.transform.parent = GameObject.Find("Corridors").transform;
+
+        return newSection;
+    }
+
 }

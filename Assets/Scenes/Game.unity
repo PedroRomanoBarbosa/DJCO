@@ -422,6 +422,17 @@ MonoBehaviour:
   emptyCorridorPrefab: {fileID: 1553020452658990, guid: 77665c70e45300643a1e1d1cf46ef4ff,
     type: 2}
   initialCorridor: {fileID: 1232582499}
+  corridorPrefabs:
+  - {fileID: 1792504991827990, guid: 90e93ede0eb17bb45b97ae2b291f597e, type: 2}
+  - {fileID: 1125271356461278, guid: 33767125eb7cdc1478479720bc251880, type: 2}
+  - {fileID: 1559571904136612, guid: ef99ec993a9733242afe918ec281d6f0, type: 2}
+  - {fileID: 1139753568883376, guid: 6d610af768c637142b29b5aab736426a, type: 2}
+  - {fileID: 1456698533539608, guid: f3cd1460e5c200f43a0d3bf1792883fe, type: 2}
+  - {fileID: 1224436461845578, guid: f6adcc1495ea4f542a394a99d6d5237b, type: 2}
+  - {fileID: 1032578951779478, guid: 4a5f132a16641b541933166d18a32c1a, type: 2}
+  - {fileID: 1807086085614338, guid: cc6a5a90b2249e2439bdacd0dade48cd, type: 2}
+  - {fileID: 1237003699767426, guid: 82e45a9f3e4027a4c88a2c3a88199de0, type: 2}
+  - {fileID: 1553020452658990, guid: 77665c70e45300643a1e1d1cf46ef4ff, type: 2}
 --- !u!4 &541565149 stripped
 Transform:
   m_PrefabParentObject: {fileID: 4144785247902354, guid: 07302c778912b3f43b5c024fe4228109,
@@ -508,7 +519,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 890243062}
   m_LocalRotation: {x: 0.30070576, y: 0, z: 0, w: 0.953717}
-  m_LocalPosition: {x: 0, y: 10, z: -5}
+  m_LocalPosition: {x: 0, y: 10, z: -5.5}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
