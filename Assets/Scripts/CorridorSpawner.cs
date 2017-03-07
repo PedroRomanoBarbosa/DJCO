@@ -9,11 +9,19 @@ public class CorridorSpawner : MonoBehaviour
 
     //Vars
     private GameObject latestCorridor;
+    public GameObject initialCorridor;
 
     void Start()
     {
-        CreateSection_EmptySection(50f);
-        latestCorridor = CreateSection_EmptySection(110f);
+        //Create Two Corridors.
+        float previous_edge = initialCorridor.transform.position.z + initialCorridor.GetComponent<CorridorVariables>().CorridorLength / 2;
+        GameObject newSection = CreateSection_EmptySection(previous_edge + emptyCorridorPrefab.GetComponent<CorridorVariables>().CorridorLength / 2);
+        newSection.transform.parent = GameObject.Find("Corridors").transform;
+
+        previous_edge = newSection.transform.position.z + newSection.GetComponent<CorridorVariables>().CorridorLength / 2;
+        latestCorridor = CreateSection_EmptySection(previous_edge + emptyCorridorPrefab.GetComponent<CorridorVariables>().CorridorLength / 2);
+        latestCorridor.transform.parent = GameObject.Find("Corridors").transform;
+
     }
 
     void FixedUpdate()

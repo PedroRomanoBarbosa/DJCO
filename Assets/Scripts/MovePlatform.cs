@@ -4,8 +4,6 @@ using UnityEngine;
 
 public class MovePlatform : MonoBehaviour
 {
-    private float GroundLength = 50f;
-
     private GameGlobals game;
 
     void Start()

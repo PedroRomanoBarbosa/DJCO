@@ -10,7 +10,7 @@ public class SimpleCharacterControl : MonoBehaviour {
     }
 
     [SerializeField] private float m_moveSpeed = 2;
-    [SerializeField] private float m_turnSpeed = 200;
+    //[SerializeField] private float m_turnSpeed = 200;
     [SerializeField] private float m_jumpForce = 4;
     [SerializeField] private Animator m_animator;
     [SerializeField] private Rigidbody m_rigidBody;
@@ -22,8 +22,8 @@ public class SimpleCharacterControl : MonoBehaviour {
 
     private readonly float m_interpolation = 10;
     private readonly float m_walkScale = 0.33f;
-    private readonly float m_backwardsWalkScale = 0.16f;
-    private readonly float m_backwardRunScale = 0.66f;
+    //private readonly float m_backwardsWalkScale = 0.16f;
+    //private readonly float m_backwardRunScale = 0.66f;
 
     private bool m_wasGrounded;
     private Vector3 m_currentDirection = Vector3.zero;
@@ -111,7 +111,7 @@ public class SimpleCharacterControl : MonoBehaviour {
 
     private void TankUpdate()
     {
-        float v = Input.GetAxis("Vertical");
+        //float v = Input.GetAxis("Vertical");
         float h = Input.GetAxis("Horizontal");
 
         m_currentV = Mathf.Lerp(m_currentV, 1, Time.deltaTime * m_interpolation);

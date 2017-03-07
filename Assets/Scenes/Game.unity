@@ -156,7 +156,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4549428611729446, guid: 0e74cf81e6fd82546b4797f71ceffb81, type: 2}
       propertyPath: m_RootOrder
-      value: 3
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 4549428611729446, guid: 0e74cf81e6fd82546b4797f71ceffb81, type: 2}
       propertyPath: m_LocalScale.x
@@ -380,7 +380,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   spawningTime: 10
-  obstaclePrefab: {fileID: 1460428938454664, guid: 3fb0beeafd1e8db49a470d18543693a9,
+  obstaclePrefab: {fileID: 1156243135827412, guid: 5984574b7ab21fb48aa58f7d44497637,
     type: 2}
 --- !u!4 &459812868
 Transform:
@@ -393,7 +393,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 2
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &459812869
 MonoBehaviour:
@@ -406,7 +406,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 610f7eb4ecc7bfd4a86e91fe1987e0c1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 10
+  speed: 15
   isMoving: 0
   textPressToBegin: {fileID: 416857812}
 --- !u!114 &459812870
@@ -422,6 +422,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   emptyCorridorPrefab: {fileID: 1553020452658990, guid: 77665c70e45300643a1e1d1cf46ef4ff,
     type: 2}
+  initialCorridor: {fileID: 1232582499}
 --- !u!4 &541565149 stripped
 Transform:
   m_PrefabParentObject: {fileID: 4144785247902354, guid: 07302c778912b3f43b5c024fe4228109,
@@ -528,6 +529,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   offsetZ: 5
   offsetY: 5
+--- !u!1 &1232582499 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 1325695395695454, guid: 07302c778912b3f43b5c024fe4228109,
+    type: 2}
+  m_PrefabInternal: {fileID: 2010372862}
 --- !u!1 &1249518331
 GameObject:
   m_ObjectHideFlags: 0
