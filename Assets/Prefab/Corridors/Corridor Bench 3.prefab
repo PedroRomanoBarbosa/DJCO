@@ -56,6 +56,8 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4085929130859218}
+  - component: {fileID: 65686354568412368}
+  - component: {fileID: 114648414245238040}
   m_Layer: 0
   m_Name: bench
   m_TagString: Untagged
@@ -226,6 +228,18 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 18, y: 1, z: 20}
   m_Center: {x: -0.5, y: 0, z: 0}
+--- !u!65 &65686354568412368
+BoxCollider:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1776899588977048}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 3.28, y: 1.64, z: 1}
+  m_Center: {x: 0.04, y: -0.52, z: 0.000008545117}
 --- !u!65 &65709988237954554
 BoxCollider:
   m_ObjectHideFlags: 1
@@ -262,6 +276,17 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   CorridorLength: 20
+--- !u!114 &114648414245238040
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1776899588977048}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 114c14a5f30299d48bf402c134ed25df, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &114917618831434788
 MonoBehaviour:
   m_ObjectHideFlags: 1
