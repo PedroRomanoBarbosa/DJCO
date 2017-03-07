@@ -473,7 +473,7 @@ MonoBehaviour:
   speed: 15
   isMoving: 0
   score: 0
-  lives: 3
+  lives: 1
   textPressToBegin: {fileID: 416857812}
 --- !u!4 &541565149 stripped
 Transform:
