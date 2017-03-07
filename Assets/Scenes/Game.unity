@@ -244,7 +244,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7899bc820dce8477fae050e7be4179e9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 6
+  speed: 12.5
   jumpSpeed: 70
   gravity: 10
 --- !u!1 &416857810
@@ -419,9 +419,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 15
   isMoving: 0
-  textPressToBegin: {fileID: 416857812}
   score: 0
   lives: 3
+  textPressToBegin: {fileID: 416857812}
 --- !u!114 &459812870
 MonoBehaviour:
   m_ObjectHideFlags: 0
