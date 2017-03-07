@@ -9,7 +9,8 @@ public class PlayerMovement : MonoBehaviour {
 	private Vector3 moveVector;
 
 	public float speed = 10f;
-	public float jumpSpeed = 10f;
+    public float aerialSlowDown = 0.3f;
+    public float jumpSpeed = 10f;
 	public float gravity = 9.8f;
 
     private CharacterController controller;
@@ -78,7 +79,7 @@ public class PlayerMovement : MonoBehaviour {
         }
         if (jumping) {
             //Slower Aerial Movement
-            moveVector.x *= 0.2f;
+            moveVector.x *= aerialSlowDown;
             timer += Time.deltaTime;
             if (timer <= 0.1f) {
                 if (Input.GetKey("space")) {
