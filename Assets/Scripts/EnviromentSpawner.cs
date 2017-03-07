@@ -56,7 +56,7 @@ public class EnviromentSpawner : MonoBehaviour {
         float previous_edge = previous.transform.position.z + previous.GetComponent<ObjectVariables>().CorridorLength / 2;
         float newPosition = previous_edge + newSectionPrefab.GetComponent<ObjectVariables>().CorridorLength / 2;
 
-        GameObject newSection = Instantiate(newSectionPrefab, new Vector3(0, 0f, newPosition), Quaternion.identity);
+        GameObject newSection = Instantiate(newSectionPrefab, new Vector3(0f, 0f, newPosition), Quaternion.identity);
         newSection.transform.parent = gameObject.transform;
 
         return newSection;
