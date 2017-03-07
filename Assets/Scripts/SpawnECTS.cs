@@ -2,11 +2,10 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class SpawnCubeObstacle : MonoBehaviour
+public class SpawnECTS : MonoBehaviour
 {
-    private int[] tracks = {-3,0,3};
     public float spawningTime = 10.0f;
-    public GameObject obstaclePrefab;
+    public GameObject ECTPrefab;
     private GameGlobals game;
 
     void Start()
@@ -29,7 +28,7 @@ public class SpawnCubeObstacle : MonoBehaviour
 
     void CreateObstacle()
     {  
-        GameObject newObstacle = Instantiate(obstaclePrefab, new Vector3(tracks[Random.Range(0, 2)], 1.5f, 35), obstaclePrefab.transform.rotation);
+        GameObject newObstacle = Instantiate(ECTPrefab, new Vector3(Random.Range(-5f, 5f), 1.5f, 35), ECTPrefab.transform.rotation);
         newObstacle.transform.parent = GameObject.Find("Obstacles").transform;
         spawningTime = 5.0f;
     }

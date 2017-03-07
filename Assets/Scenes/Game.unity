@@ -380,8 +380,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   spawningTime: 10
-  obstaclePrefab: {fileID: 1156243135827412, guid: 5984574b7ab21fb48aa58f7d44497637,
-    type: 2}
+  ECTPrefab: {fileID: 1156243135827412, guid: 5984574b7ab21fb48aa58f7d44497637, type: 2}
 --- !u!4 &459812868
 Transform:
   m_ObjectHideFlags: 0
