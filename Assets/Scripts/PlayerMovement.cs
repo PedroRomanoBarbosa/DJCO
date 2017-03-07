@@ -24,8 +24,7 @@ public class PlayerMovement : MonoBehaviour {
     }
 
 	void Update () {
-        if (game.isMoving)
-        {
+        if (game.isMoving) {
             animator.SetFloat("MoveSpeed", game.speed);
 
             //Set Animations
@@ -33,10 +32,8 @@ public class PlayerMovement : MonoBehaviour {
 
             //Movement
             movementLogic();
-        } else 
-        {
+        } else {
             //moveVector should not be changed while game is paused.
-
             animator.SetFloat("MoveSpeed", 0);
         }
     }
@@ -45,64 +42,50 @@ public class PlayerMovement : MonoBehaviour {
 		return -t * t + 1;
 	}
 
-    void animationLogic()
-    {
-        if (controller.isGrounded)
-        {
-            if (!animator.GetBool("Grounded"))
-                animator.SetBool("Grounded", true);
+    void animationLogic() {
+        if (controller.isGrounded) {
+			if (!animator.GetBool ("Grounded")) {
+				animator.SetBool ("Grounded", true);
+			}
         }
-        if(jumping)
-            if (animator.GetBool("Grounded"))
-                animator.SetBool("Grounded", false);
+		if (jumping) {
+			if (animator.GetBool ("Grounded")) {
+				animator.SetBool ("Grounded", false);
+			}
+		}
     }
 
-    void movementLogic()
-    {
+    void movementLogic() {
         //Get MoveVector
-        if (controller.isGrounded)
-        {
+        if (controller.isGrounded) {
             verticalVelocity = 0.0f;
             timer = 0.0f;
             jumping = false;
-        }
-        else
-        {
+        } else {
             verticalVelocity += -gravity * Time.deltaTime;
         }
         moveVector = Vector3.zero;
 
 
         // STRAFE
-
-        //
-        //)
-
-        if (Input.GetAxisRaw("Horizontal") <= 0 && transform.position.x >= -5
-                || Input.GetAxisRaw("Horizontal") >= 0 && transform.position.x <= 5)
-            moveVector.x = Input.GetAxisRaw("Horizontal") * speed;
-            
+		if (Input.GetAxisRaw ("Horizontal") <= 0 && transform.position.x >= -5 || Input.GetAxisRaw ("Horizontal") >= 0 && transform.position.x <= 5) {
+			moveVector.x = Input.GetAxisRaw ("Horizontal") * speed;
+		}
 
         // JUMP
-        if (Input.GetKeyDown("space"))
-        {
+        if (Input.GetKeyDown("space")) {
             jumping = true;
         }
-        if (jumping)
-        {
+        if (jumping) {
             //Slower Aerial Movement
             moveVector.x *= 0.2f;
-
             timer += Time.deltaTime;
-            if (timer <= 0.1f)
-            {
-                if (Input.GetKey("space"))
-                {
+            if (timer <= 0.1f) {
+                if (Input.GetKey("space")) {
                     verticalVelocity += jumpFunction(timer / 0.25f) * Time.deltaTime * jumpSpeed;
                 }
             }
         }
-
         moveVector.y += verticalVelocity;
         controller.Move(moveVector * Time.deltaTime);
     }
