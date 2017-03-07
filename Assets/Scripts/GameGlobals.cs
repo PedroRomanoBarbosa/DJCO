@@ -22,6 +22,9 @@ public class GameGlobals : MonoBehaviour {
     {
         if (!gameOver)
         {
+            if (Input.GetKey("escape"))
+                Application.Quit();
+
             //Unpause
             if (!isMoving && Input.anyKeyDown)
             {
