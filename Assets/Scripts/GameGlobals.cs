@@ -13,15 +13,19 @@ public class GameGlobals : MonoBehaviour {
 
     public Text textPressToBegin;
     public Text textLives;
+    public Text textTime;
     private bool gameOver = false;
+    private float elapsedTime = 0f;
 
     void Start()
     {
         textLives.text = "Lives :" + lives;
+        textTime.text = "Time: 00:00";
     }
 
     void Update()
     {
+        elapsedTime += Time.deltaTime;
         if (!gameOver)
         {
             if (Input.GetKey("escape"))
@@ -43,6 +47,8 @@ public class GameGlobals : MonoBehaviour {
             }
             //Update Lives
             textLives.text = "Lives: " + lives;
+            //Update Time
+            textTime.text = "Time: " + ((int)elapsedTime) / 60 + ":" + ((int)elapsedTime) % 60;
         } else
         {
             //Restart the game
