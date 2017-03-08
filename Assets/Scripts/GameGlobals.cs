@@ -14,6 +14,7 @@ public class GameGlobals : MonoBehaviour {
     public Text textPressToBegin;
     public Text textLives;
     public Text textTime;
+    public Text textScore;
     private bool gameOver = false;
     private float elapsedTime = 0f;
 
@@ -21,6 +22,7 @@ public class GameGlobals : MonoBehaviour {
     {
         textLives.text = "Lives :" + lives;
         textTime.text = "Time: 00:00";
+        textScore.text = "Score: " + score;
     }
 
     void Update()
@@ -49,6 +51,8 @@ public class GameGlobals : MonoBehaviour {
             textLives.text = "Lives: " + lives;
             //Update Time
             textTime.text = "Time: " + ((int)elapsedTime) / 60 + ":" + ((int)elapsedTime) % 60;
+            //Update Score
+            textScore.text = "Score: " + score;
         } else
         {
             //Restart the game
