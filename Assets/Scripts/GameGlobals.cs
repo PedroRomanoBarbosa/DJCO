@@ -27,9 +27,14 @@ public class GameGlobals : MonoBehaviour {
 
     void Update()
     {
-        elapsedTime += Time.deltaTime;
         if (!gameOver)
         {
+            if (isMoving)
+            {
+                elapsedTime += Time.deltaTime;
+                UpdateUIText();
+            }
+
             if (Input.GetKey("escape"))
                 Application.Quit();
 
@@ -47,13 +52,9 @@ public class GameGlobals : MonoBehaviour {
                 isMoving = false;
                 textPressToBegin.text = "YOU LOST\nPress Space to Retry";
             }
-            //Update Lives
-            textLives.text = "Lives: " + lives;
-            //Update Time
-            textTime.text = "Time: " + ((int)elapsedTime) / 60 + ":" + ((int)elapsedTime) % 60;
-            //Update Score
-            textScore.text = "Score: " + score;
-        } else
+            
+        }
+        else
         {
             //Restart the game
             if (Input.GetKeyDown("space"))
@@ -61,7 +62,22 @@ public class GameGlobals : MonoBehaviour {
                 SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex, LoadSceneMode.Single);
             }
         }
+    }
 
-   
+    void UpdateUIText()
+    {
+        //Update Lives
+        textLives.text = "Lives: " + lives;
+        //Update Time
+        if (((int)elapsedTime) % 60 < 10)
+        {
+            textTime.text = "Time: " + ((int)elapsedTime) / 60 + ":0" + ((int)elapsedTime) % 60;
+        }
+        else
+        {
+            textTime.text = "Time: " + ((int)elapsedTime) / 60 + ":" + ((int)elapsedTime) % 60;
+        }
+        //Update Score
+        textScore.text = "Score: " + score;
     }
 }
