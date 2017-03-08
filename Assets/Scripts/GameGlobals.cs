@@ -12,10 +12,12 @@ public class GameGlobals : MonoBehaviour {
     public int lives = 3;
 
     public Text textPressToBegin;
+    public Text textLives;
     private bool gameOver = false;
 
     void Start()
     {
+        textLives.text = "Lives :" + lives;
     }
 
     void Update()
@@ -39,6 +41,8 @@ public class GameGlobals : MonoBehaviour {
                 isMoving = false;
                 textPressToBegin.text = "YOU LOST\nPress Space to Retry";
             }
+            //Update Lives
+            textLives.text = "Lives: " + lives;
         } else
         {
             //Restart the game
