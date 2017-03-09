@@ -42,7 +42,7 @@ RenderSettings:
 LightmapSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 7
-  m_GIWorkflowMode: 1
+  m_GIWorkflowMode: 0
   m_GISettings:
     serializedVersion: 2
     m_BounceScale: 1
@@ -471,6 +471,7 @@ GameObject:
   m_Component:
   - component: {fileID: 416979023}
   - component: {fileID: 416979024}
+  - component: {fileID: 416979025}
   m_Layer: 0
   m_Name: Enviroment
   m_TagString: Untagged
@@ -504,6 +505,24 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5b934355d894bff449d24ff17b2b7b17, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &416979025
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 416979022}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 729161fe7f4fa445f98e68385bd74bac, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  columns: 500
+  lines: 500
+  firstSection: 1
+  column: {fileID: 1348610434388698, guid: 37d802243223a8842beed52b6ab814c3, type: 2}
+  bench: {fileID: 0}
+  door: {fileID: 0}
+  coin: {fileID: 0}
 --- !u!1 &459812866
 GameObject:
   m_ObjectHideFlags: 0

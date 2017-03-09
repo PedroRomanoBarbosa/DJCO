@@ -467,6 +467,8 @@ PlayerSettings:
   cloudServicesEnabled:
     Build: 1
     Collab: 1
+    ErrorHub: 0
+    Hub: 0
     UNet: 1
   cloudProjectId: 644f3d2e-b8d3-4f21-a7a1-40ce50283d38
   projectName: DJCO-1
