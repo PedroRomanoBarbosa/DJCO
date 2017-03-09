@@ -28,6 +28,7 @@ public class MoveECTS : MonoBehaviour
         if (other.gameObject.CompareTag("Player"))
         {
             game.score += 1;
+            SoundScript.Instance.MakeCoinSound();
             Destroy(gameObject);
         }
     }
