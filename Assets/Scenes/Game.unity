@@ -533,6 +533,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   jumpSound: {fileID: 8300000, guid: 1859cb6999ded6045a42a4546bd86168, type: 3}
+  coinSound: {fileID: 8300000, guid: d50d8832ae088ed40aaab2dd320d9d6f, type: 3}
 --- !u!4 &459812868
 Transform:
   m_ObjectHideFlags: 0
@@ -540,7 +541,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 459812866}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 7.1308327, y: 4.441536, z: 46.16921}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
