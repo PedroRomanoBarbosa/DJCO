@@ -37,7 +37,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 2023182615}
-  m_IndirectSpecularColor: {r: 0, g: 0, b: 0, a: 1}
+  m_IndirectSpecularColor: {r: 0.24006295, g: 0.583168, b: 0.99021786, a: 1}
 --- !u!157 &3
 LightmapSettings:
   m_ObjectHideFlags: 0
@@ -516,13 +516,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 729161fe7f4fa445f98e68385bd74bac, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  columns: 500
-  lines: 500
-  firstSection: 1
-  column: {fileID: 1348610434388698, guid: 37d802243223a8842beed52b6ab814c3, type: 2}
-  bench: {fileID: 0}
-  door: {fileID: 0}
-  coin: {fileID: 0}
+  Columns: 0
+  Lines: 0
+  FirstSection: 0
+  PlayerX: 0
+  Player: {fileID: 0}
+  Column: {fileID: 0}
+  Bench: {fileID: 0}
+  Door: {fileID: 0}
+  Coin: {fileID: 0}
 --- !u!1 &459812866
 GameObject:
   m_ObjectHideFlags: 0
@@ -578,7 +580,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 610f7eb4ecc7bfd4a86e91fe1987e0c1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 15
+  speed: 40
   isMoving: 0
   score: 0
   lives: 1
