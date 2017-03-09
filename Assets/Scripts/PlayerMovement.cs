@@ -75,6 +75,8 @@ public class PlayerMovement : MonoBehaviour {
 
         // JUMP
         if (Input.GetKeyDown("space")) {
+            //Make jump sound
+            SoundScript.Instance.MakeJumpSound();
             jumping = true;
         }
         if (jumping) {
@@ -86,6 +88,7 @@ public class PlayerMovement : MonoBehaviour {
                     verticalVelocity += jumpFunction(timer / 0.25f) * Time.deltaTime * jumpSpeed;
                 }
             }
+            
         }
         moveVector.y += verticalVelocity;
         controller.Move(moveVector * Time.deltaTime);
