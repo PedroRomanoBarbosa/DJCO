@@ -7,6 +7,7 @@ public class SoundScript : MonoBehaviour
     public static SoundScript Instance;
     public AudioClip jumpSound;
     public AudioClip coinSound;
+    public AudioClip ouchSound;
 
     void Awake()
     {
@@ -28,6 +29,11 @@ public class SoundScript : MonoBehaviour
     public void MakeCoinSound()
     {
         MakeSound(coinSound);
+    }
+
+    public void MakeOuchSound()
+    {
+        MakeSound(ouchSound);
     }
 
     private void MakeSound(AudioClip originalClip)

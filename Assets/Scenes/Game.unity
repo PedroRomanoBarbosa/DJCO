@@ -534,6 +534,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   jumpSound: {fileID: 8300000, guid: 1859cb6999ded6045a42a4546bd86168, type: 3}
   coinSound: {fileID: 8300000, guid: d50d8832ae088ed40aaab2dd320d9d6f, type: 3}
+  ouchSound: {fileID: 8300000, guid: 5b954f3bb9f16944e9a685ee0fc7bfb2, type: 3}
 --- !u!4 &459812868
 Transform:
   m_ObjectHideFlags: 0

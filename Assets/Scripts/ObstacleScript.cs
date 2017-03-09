@@ -14,6 +14,7 @@ public class ObstacleScript : MonoBehaviour {
     {
         if (other.gameObject.CompareTag("Player"))
         {
+            SoundScript.Instance.MakeOuchSound();
             game.lives -= 1;
         }
     }
