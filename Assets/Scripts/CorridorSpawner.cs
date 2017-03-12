@@ -60,9 +60,9 @@ public class CorridorSpawner : MonoBehaviour
         float newPosition = previous_edge + newSectionPrefab.GetComponent<ObjectVariables>().CorridorLength/2;
 
 		generator.GenerateSection ();
-		instantiateObjects ();
-        GameObject newSection = Instantiate(newSectionPrefab, new Vector3(0, 0f, newPosition), Quaternion.identity);
-        newSection.transform.parent = GameObject.Find(gameObject.name).transform;
+		GameObject newSection = instantiateSection (newPosition);
+        //GameObject newSection = Instantiate(newSectionPrefab, new Vector3(0, 0f, newPosition), Quaternion.identity);
+        //newSection.transform.parent = GameObject.Find(gameObject.name).transform;
 
         return newSection;
     }
@@ -70,30 +70,46 @@ public class CorridorSpawner : MonoBehaviour
 	/**
 	 * TODO: Put obstacles in the right position
 	 */
-	private void instantiateObjects () {
+	private GameObject instantiateSection (float position) {
+		GameObject newSection = Instantiate(emptyCorridorPrefab, new Vector3(0, 0f, position), Quaternion.identity);
+		newSection.transform.parent = GameObject.Find(gameObject.name).transform;
 		for (int y = 0; y < generator.getColumns(); y++) {
 			for (int x = 0; x < generator.getLines(); x++) {
 				Generate.Types type = generator.getMatrix() [y, x];
+				GameObject gameObject = new GameObject ();
 				switch (type) {
 				case Generate.Types.Column:
-					Instantiate (Column, new Vector3 (5 * x - 5, 1, 5 * y), Quaternion.identity);
+					gameObject = Instantiate (Column);
+					gameObject.transform.parent = newSection.transform;
+					gameObject.transform.localPosition = new Vector3 (5 * x - 5, 1, 5 * y);
 					break;
 				case Generate.Types.Bench:
-					Instantiate (Bench, new Vector3 (5 * x - 5, 2, 5 * y), Quaternion.identity);
+					gameObject = Instantiate (Bench);
+					gameObject.transform.parent = newSection.transform;
+					gameObject.transform.localPosition = new Vector3 (5 * x - 5, 2, 5 * y);
 					break;
 				case Generate.Types.Door:
-					Instantiate (Door, new Vector3 (5 * x - 5, 4, 5 * y), Quaternion.identity);
+					gameObject = Instantiate (Door);
+					gameObject.transform.parent = newSection.transform;
+					gameObject.transform.localPosition = new Vector3 (5 * x - 5, 4, 5 * y);
 					break;
 				case Generate.Types.Coin:
-					Instantiate (Coin, new Vector3 (5 * x - 5, 2, 5 * y), Quaternion.identity);
+					gameObject = Instantiate (Coin);
+					gameObject.transform.parent = newSection.transform;
+					gameObject.transform.localPosition = new Vector3 (5 * x - 5, 2, 5 * y);
 					break;
 				case Generate.Types.BenchCoin:
-					Instantiate (Bench, new Vector3 (5 * x - 5, 2, 5 * y), Quaternion.identity);
-					Instantiate (Coin, new Vector3 (5 * x - 5, 4, 5 * y), Quaternion.identity);
+					gameObject = Instantiate (Bench);
+					gameObject.transform.parent = newSection.transform;
+					gameObject.transform.localPosition = new Vector3 (5 * x - 5, 2, 5 * y);
+					gameObject = Instantiate (Coin);
+					gameObject.transform.parent = newSection.transform;
+					gameObject.transform.localPosition = new Vector3 (5 * x - 5, 4, 5 * y);
 					break;
 				}
 			}
 		}
+		return newSection;
 	}
 
 }
