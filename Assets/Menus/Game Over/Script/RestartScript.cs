@@ -3,9 +3,9 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class PlayScript : MonoBehaviour
+public class RestartScript : MonoBehaviour
 {
-    public void LoadByIndex(int sceneIndex)
+    public void Restart()
     {
         SceneManager.LoadScene(1);
     }

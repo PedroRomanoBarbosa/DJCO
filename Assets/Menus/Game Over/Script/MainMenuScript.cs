@@ -3,10 +3,10 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class PlayScript : MonoBehaviour
+public class MainMenuScript : MonoBehaviour
 {
-    public void LoadByIndex(int sceneIndex)
+    public void MainMenu()
     {
-        SceneManager.LoadScene(1);
+        SceneManager.LoadScene(0);
     }
 }

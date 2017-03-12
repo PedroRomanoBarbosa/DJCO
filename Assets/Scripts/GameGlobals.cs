@@ -61,6 +61,11 @@ public class GameGlobals : MonoBehaviour {
             {
                 SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex, LoadSceneMode.Single);
             }
+            if(Input.GetKeyDown("o"))
+            {
+                GameOverScript.score = score;
+                SceneManager.LoadScene(2);
+            }
         }
     }
 
