@@ -180,7 +180,7 @@ public class Generate : MonoBehaviour {
 			break;
 		case (int) Difficulties.Medium:
 			numObstacles = Random.Range (2, 3 + 1);
-			numCoins = numCoins = Random.Range (1, 2 + 1);
+			numCoins = Random.Range (1, 2 + 1);
 			break;
 		case (int) Difficulties.Hard:
 			numObstacles = Random.Range (3, 4 + 1);
