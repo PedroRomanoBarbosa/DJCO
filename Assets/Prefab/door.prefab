@@ -188,7 +188,7 @@ BoxCollider:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1980937074792602}
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
   m_Size: {x: 0.025701031, y: 0.01788997, z: 0.018790787}
@@ -200,7 +200,7 @@ BoxCollider:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1621914322341356}
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
   m_Size: {x: 0.020000003, y: 0.020000005, z: 0.019999994}
@@ -216,6 +216,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5123084c0342e3043a47499012c4c271, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  player: {fileID: 0}
+  player: {fileID: 1550020567978846, guid: 3c11befa91a774b2e99b273803fc5238, type: 2}
   speed: 200
   radius: 7
