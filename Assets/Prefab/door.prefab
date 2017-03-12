@@ -22,6 +22,7 @@ GameObject:
   - component: {fileID: 33925962561598130}
   - component: {fileID: 23377672238716692}
   - component: {fileID: 65705441749899860}
+  - component: {fileID: 114792754090454900}
   m_Layer: 0
   m_Name: frame
   m_TagString: Untagged
@@ -41,6 +42,7 @@ GameObject:
   - component: {fileID: 23666869052431972}
   - component: {fileID: 65174430442742482}
   - component: {fileID: 114727773922963538}
+  - component: {fileID: 114240397444081776}
   m_Layer: 0
   m_Name: door
   m_TagString: Untagged
@@ -205,6 +207,17 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 0.020000003, y: 0.020000005, z: 0.019999994}
   m_Center: {x: 0.0000000018626451, y: 0, z: 0}
+--- !u!114 &114240397444081776
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1980937074792602}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 114c14a5f30299d48bf402c134ed25df, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &114727773922963538
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -217,5 +230,16 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   player: {fileID: 1550020567978846, guid: 3c11befa91a774b2e99b273803fc5238, type: 2}
-  speed: 200
-  radius: 7
+  speed: 300
+  radius: 20
+--- !u!114 &114792754090454900
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1621914322341356}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 114c14a5f30299d48bf402c134ed25df, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

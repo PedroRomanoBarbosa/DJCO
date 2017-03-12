@@ -36,8 +36,8 @@ GameObject:
   m_Component:
   - component: {fileID: 4987187768144422}
   - component: {fileID: 65155641383699996}
-  - component: {fileID: 114901220863781392}
   - component: {fileID: 114902197327329250}
+  - component: {fileID: 114280879463757492}
   m_Layer: 0
   m_Name: coin
   m_TagString: Untagged
@@ -223,6 +223,17 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1.5, y: 1.5, z: 0.7}
   m_Center: {x: 0, y: 1.8, z: 0}
+--- !u!114 &114280879463757492
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1156243135827412}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a2337d4fb8da539429a0c1b1f2b0ce1b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &114631915057323308
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -235,17 +246,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 180
---- !u!114 &114901220863781392
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1156243135827412}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a2337d4fb8da539429a0c1b1f2b0ce1b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &114902197327329250
 MonoBehaviour:
   m_ObjectHideFlags: 1
