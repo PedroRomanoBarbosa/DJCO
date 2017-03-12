@@ -12,7 +12,7 @@ public class PlayerMovement : MonoBehaviour {
     public float aerialSlowDown = 1f;
     public float jumpSpeed = 20f;
 	public float gravity = 2000f;
-	public bool grounded; 
+	public bool grounded;
 
     private CharacterController controller;
     private Animator animator;
@@ -62,8 +62,8 @@ public class PlayerMovement : MonoBehaviour {
 
 		// JUMP
 		if (Input.GetKey ("space")) {
-			//Make jump sound
-			SoundScript.Instance.MakeJumpSound();
+            //Make jump sound
+            SoundScript.Instance.MakeJumpSound();
 			jumping = true;
 		}
 		if (jumping) {

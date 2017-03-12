@@ -8,6 +8,7 @@ public class SoundScript : MonoBehaviour
     public AudioClip jumpSound;
     public AudioClip coinSound;
     public AudioClip ouchSound;
+    public AudioSource jumpSource;
 
     void Awake()
     {
@@ -23,7 +24,8 @@ public class SoundScript : MonoBehaviour
 
     public void MakeJumpSound()
     {
-        MakeSound(jumpSound);
+        // MakeSound(jumpSound);
+        jumpSource.Play();
     }
 
     public void MakeCoinSound()
