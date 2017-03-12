@@ -2,8 +2,8 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Generate : MonoBehaviour {
-	private enum Types {
+public class Generate {
+	public enum Types {
 		Empty,
 		Player,
 		Column,
@@ -28,25 +28,38 @@ public class Generate : MonoBehaviour {
 	private int difficulty, numObstacles, numCoins;
 	private int playerY;
 	private Types[,] matrix;
-	public int Columns, Lines;
+
+	private int columns, lines;
 	public bool FirstSection;
 	public int PlayerX;
-	public GameObject Player;
-	public GameObject Column;
-	public GameObject Bench;
-	public GameObject Door;
-	public GameObject Coin;
 
-	void Start () {
-		matrix = new Types[Columns, Lines];
+	public Generate (int c, int l) {
+		columns = c;
+		lines = l;
+	}
+
+	public Types[,] getMatrix() {
+		return matrix;
+	}
+
+	public int getColumns() {
+		return columns;
+	}
+
+	public int getLines() {
+		return lines;
+	}
+
+	public void GenerateSection () {
+		matrix = new Types[columns, lines];
 
 		// Decide where to start
 		if (FirstSection) {
-			PlayerX = Random.Range (0, Lines);
+			PlayerX = Random.Range (0, lines);
 		}
 
 		// Create player path
-		playerY = Columns - 1;
+		playerY = columns - 1;
 		AssignPosition ();
 		while (playerY > 0) {
 			Moves[] moves = GetPossibleMoves ();
@@ -71,9 +84,6 @@ public class Generate : MonoBehaviour {
 		assignObstacles ();
 
 		assignCoins ();
-
-		instantiateObstacles ();
-
 	}
 
 	private Moves[] GetPossibleMoves () {
@@ -83,10 +93,10 @@ public class Generate : MonoBehaviour {
 		moves.Add(Moves.Up);
 
 		// If the player is in the first position it can only go up
-		if (playerY < Columns - 1) {
+		if (playerY < columns - 1) {
 			// Can it go left?
 			if (PlayerX > 0 && matrix[playerY, PlayerX - 1] != Types.Player) {
-				if (playerY == Columns - 1) {
+				if (playerY == columns - 1) {
 					moves.Add(Moves.Left);
 				} else if (matrix[playerY + 1, PlayerX - 1] != Types.Player) {
 					moves.Add(Moves.Left);
@@ -94,8 +104,8 @@ public class Generate : MonoBehaviour {
 			}
 
 			// Can it go right?
-			if (PlayerX < Lines - 1 && matrix[playerY, PlayerX + 1] != Types.Player) {
-				if (playerY == Columns - 1) {
+			if (PlayerX < lines - 1 && matrix[playerY, PlayerX + 1] != Types.Player) {
+				if (playerY == columns - 1) {
 					moves.Add(Moves.Right);
 				} else if (matrix[playerY + 1, PlayerX + 1] != Types.Player) {
 					moves.Add(Moves.Right);
@@ -111,21 +121,21 @@ public class Generate : MonoBehaviour {
 		doorValidPositions = new List<KeyValuePair<int, int>> ();
 
 		// Iterate the position matrix
-		for (int y = 0; y < Columns; y++) {
-			for (int x = 0; x < Lines; x++) {
+		for (int y = 0; y < columns; y++) {
+			for (int x = 0; x < lines; x++) {
 				KeyValuePair<int, int> position = new KeyValuePair<int,int> (x, y);
 
 				// Benches can be put in player positions only if there are player positions adjacent at least in one direction
 				// For first and last columns
-				if (x == 0 || x == Lines - 1) {
-					if (y != 0 && y != Columns - 1) {
+				if (x == 0 || x == lines - 1) {
+					if (y != 0 && y != columns - 1) {
 						if (matrix [y - 1, x] == Types.Player && matrix [y + 1, x] == Types.Player) {
 							benchValidPositions.Add (position);
 						}
 					}
 				// For first and last rows
-				} else if (y == 0 || y == Columns - 1) {
-					if (x != 0 && x != Lines - 1) {
+				} else if (y == 0 || y == columns - 1) {
+					if (x != 0 && x != lines - 1) {
 						if (matrix [y, x - 1] == Types.Player && matrix [y, x + 1] == Types.Player) {
 							benchValidPositions.Add (position);
 						}
@@ -147,7 +157,7 @@ public class Generate : MonoBehaviour {
 					}
 
 					// Door and right side columns
-					if (x == Lines - 1) {
+					if (x == lines - 1) {
 						columnValidPositions.Add (position);
 						doorValidPositions.Add (position);
 					}
@@ -158,8 +168,8 @@ public class Generate : MonoBehaviour {
 
 	private void getValidCoinPositions () {
 		coinValidPositions = new List<KeyValuePair<int, int>> ();
-		for(int y = 0; y < Columns - 1; y++) {
-			for(int x = 0; x < Lines - 1; x++) {
+		for(int y = 0; y < columns - 1; y++) {
+			for(int x = 0; x < lines - 1; x++) {
 				if (matrix [y, x] == Types.Empty || matrix [y, x] == Types.Bench || matrix [y, x] == Types.Player) {
 					coinValidPositions.Add (new KeyValuePair<int, int>(x, y));
 				}
@@ -186,36 +196,6 @@ public class Generate : MonoBehaviour {
 			numObstacles = Random.Range (3, 4 + 1);
 			numCoins = Random.Range (2, 3 + 1);
 			break;
-		}
-		Debug.Log (numCoins);
-	}
-
-	/**
-	 * TODO: Put obstacles in the right position
-	 */
-	private void instantiateObstacles () {
-		for (int y = 0; y < Columns; y++) {
-			for (int x = 0; x < Lines; x++) {
-				Types type = matrix [y, x];
-				switch(type){
-				case Types.Column:
-					Instantiate (Column, new Vector3 (5 * x - 5, 1, 5 * y), Quaternion.identity);
-					break;
-				case Types.Bench:
-					Instantiate (Bench, new Vector3 (5 * x - 5, 2, 5 * y), Quaternion.identity);
-					break;
-				case Types.Door:
-					Instantiate (Door, new Vector3 (5 * x - 5, 4, 5 * y), Quaternion.identity);
-					break;
-				case Types.Coin:
-					Instantiate (Coin, new Vector3 (5 * x - 5, 2, 5 * y), Quaternion.identity);
-					break;
-				case Types.BenchCoin:
-					Instantiate (Bench, new Vector3 (5 * x - 5, 2, 5 * y), Quaternion.identity);
-					Instantiate (Coin, new Vector3 (5 * x - 5, 4, 5 * y), Quaternion.identity);
-					break;
-				}
-			}
 		}
 	}
 
