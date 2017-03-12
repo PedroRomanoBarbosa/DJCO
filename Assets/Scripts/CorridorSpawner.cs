@@ -4,8 +4,14 @@ using UnityEngine;
 
 public class CorridorSpawner : MonoBehaviour
 {
+	private Generate generator;
+
     //Prefabs
     public GameObject emptyCorridorPrefab;
+	public GameObject Column;
+	public GameObject Bench;
+	public GameObject Door;
+	public GameObject Coin;
 
     //Vars
     private GameObject latestCorridor;
@@ -16,6 +22,8 @@ public class CorridorSpawner : MonoBehaviour
 
     void Start()
     {
+		generator = new Generate (3, 3);
+
         //Create Two Empty Corridors.
         latestCorridor = CreateSection(initialCorridor, emptyCorridorPrefab);
         latestCorridor = CreateSection(latestCorridor, emptyCorridorPrefab);
@@ -51,10 +59,57 @@ public class CorridorSpawner : MonoBehaviour
         float previous_edge = previous.transform.position.z + previous.GetComponent<ObjectVariables>().CorridorLength / 2;
         float newPosition = previous_edge + newSectionPrefab.GetComponent<ObjectVariables>().CorridorLength/2;
 
-        GameObject newSection = Instantiate(newSectionPrefab, new Vector3(0, 0f, newPosition), Quaternion.identity);
-        newSection.transform.parent = GameObject.Find(gameObject.name).transform;
+		generator.GenerateSection ();
+		GameObject newSection = instantiateSection (newPosition);
+        //GameObject newSection = Instantiate(newSectionPrefab, new Vector3(0, 0f, newPosition), Quaternion.identity);
+        //newSection.transform.parent = GameObject.Find(gameObject.name).transform;
 
         return newSection;
     }
+
+	/**
+	 * TODO: Put obstacles in the right position
+	 */
+	private GameObject instantiateSection (float position) {
+		GameObject newSection = Instantiate(emptyCorridorPrefab, new Vector3(0, 0f, position), Quaternion.identity);
+		newSection.transform.parent = GameObject.Find(gameObject.name).transform;
+		for (int y = 0; y < generator.getColumns(); y++) {
+			for (int x = 0; x < generator.getLines(); x++) {
+				Generate.Types type = generator.getMatrix() [y, x];
+				GameObject gameObject = new GameObject ();
+				switch (type) {
+				case Generate.Types.Column:
+					gameObject = Instantiate (Column);
+					gameObject.transform.parent = newSection.transform;
+					gameObject.transform.localPosition = new Vector3 (5 * x - 5, 1, 5 * y);
+					break;
+				case Generate.Types.Bench:
+					gameObject = Instantiate (Bench);
+					gameObject.transform.parent = newSection.transform;
+					gameObject.transform.localPosition = new Vector3 (5 * x - 5, 2, 5 * y);
+					break;
+				case Generate.Types.Door:
+					gameObject = Instantiate (Door);
+					gameObject.transform.parent = newSection.transform;
+					gameObject.transform.localPosition = new Vector3 (5 * x - 5, 4, 5 * y);
+					break;
+				case Generate.Types.Coin:
+					gameObject = Instantiate (Coin);
+					gameObject.transform.parent = newSection.transform;
+					gameObject.transform.localPosition = new Vector3 (5 * x - 5, 2, 5 * y);
+					break;
+				case Generate.Types.BenchCoin:
+					gameObject = Instantiate (Bench);
+					gameObject.transform.parent = newSection.transform;
+					gameObject.transform.localPosition = new Vector3 (5 * x - 5, 2, 5 * y);
+					gameObject = Instantiate (Coin);
+					gameObject.transform.parent = newSection.transform;
+					gameObject.transform.localPosition = new Vector3 (5 * x - 5, 4, 5 * y);
+					break;
+				}
+			}
+		}
+		return newSection;
+	}
 
 }
