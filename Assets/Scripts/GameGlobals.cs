@@ -15,7 +15,7 @@ public class GameGlobals : MonoBehaviour {
     public Text textLives;
     public Text textTime;
     public Text textScore;
-    private bool gameOver = false;
+    public bool gameOver = false;
     private float elapsedTime = 0f;
 	public Generate.Difficulties difficulty = Generate.Difficulties.NoBrainer;
 
@@ -34,6 +34,7 @@ public class GameGlobals : MonoBehaviour {
             {
                 elapsedTime += Time.deltaTime;
                 UpdateUIText();
+
             }
 
             if (Input.GetKey("escape"))
@@ -44,7 +45,12 @@ public class GameGlobals : MonoBehaviour {
             {
                 isMoving = true;
                 textPressToBegin.text = "";
+            } else if (Input.GetKeyDown("p"))
+            {
+                isMoving = false;
+                textPressToBegin.text = "Game is Paused.\nPress any key to continue";
             }
+
 
             //Check if the game is over
             if (lives <= 0)

@@ -314,6 +314,11 @@ Prefab:
       propertyPath: jumpSpeed
       value: 90
       objectReference: {fileID: 0}
+    - target: {fileID: 114862679373314776, guid: 3c11befa91a774b2e99b273803fc5238,
+        type: 2}
+      propertyPath: textPressToBegin
+      value: 
+      objectReference: {fileID: 416857812}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 3c11befa91a774b2e99b273803fc5238, type: 2}
   m_IsPrefabParent: 0
@@ -498,6 +503,8 @@ MonoBehaviour:
   textLives: {fileID: 1031214248}
   textTime: {fileID: 151912409}
   textScore: {fileID: 464935986}
+  gameOver: 0
+  difficulty: 0
 --- !u!82 &459812870
 AudioSource:
   m_ObjectHideFlags: 0
@@ -801,13 +808,13 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 890243062}
-  m_LocalRotation: {x: 0.23344536, y: 0, z: 0, w: 0.97236997}
+  m_LocalRotation: {x: 0.25038, y: 0, z: 0, w: 0.9681477}
   m_LocalPosition: {x: 0, y: 10, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 2
-  m_LocalEulerAnglesHint: {x: 27, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 29, y: 0, z: 0}
 --- !u!114 &890243068
 MonoBehaviour:
   m_ObjectHideFlags: 0
