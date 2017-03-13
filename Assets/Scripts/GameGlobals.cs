@@ -17,12 +17,13 @@ public class GameGlobals : MonoBehaviour {
     public Text textScore;
     private bool gameOver = false;
     private float elapsedTime = 0f;
+	public Generate.Difficulties difficulty = Generate.Difficulties.NoBrainer;
 
     void Start()
     {
         textLives.text = "Lives :" + lives;
         textTime.text = "Time: 00:00";
-        textScore.text = "Score: " + score;
+        textScore.text = "ECTS: " + score;
     }
 
     void Update()

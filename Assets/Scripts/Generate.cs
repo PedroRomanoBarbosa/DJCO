@@ -19,7 +19,7 @@ public class Generate {
 		Left,
 		Right
 	}
-	private enum Difficulties {
+	public enum Difficulties {
 		NoBrainer,
 		Easy,
 		Medium,
@@ -52,7 +52,7 @@ public class Generate {
 		return lines;
 	}
 
-	public void GenerateSection () {
+	public void GenerateSection (Difficulties difficulty) {
 		matrix = new Types[columns, lines];
 
 		// Decide where to start
@@ -81,7 +81,7 @@ public class Generate {
 			AssignPosition ();
 		}
 
-		setDifficulty ();
+		setDifficulty (difficulty);
 
 		assignObstacles ();
 
@@ -192,12 +192,11 @@ public class Generate {
 		}
 	}
 
-	private void setDifficulty() {
-		difficulty = Random.Range ((int)Difficulties.NoBrainer, (int)Difficulties.Hard + 1);
-		switch (difficulty) {
+	private void setDifficulty(Difficulties difficulty) {
+		switch ((int)difficulty) {
 		case (int) Difficulties.NoBrainer:
 			numObstacles = Random.Range (0, 1 + 1);
-			numCoins = 0;
+			numCoins = 1;
 			numBeers = 0;
 			break;
 		case (int) Difficulties.Easy:
