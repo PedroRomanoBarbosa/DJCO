@@ -15,7 +15,7 @@ public class CorridorSpawner : MonoBehaviour
 	public GameObject Beer;
 
     //Vars
-    private GameObject latestCorridor;
+    public GameObject latestCorridor;
     public GameObject initialCorridor;
     public GameObject[] corridorPrefabs;
 
@@ -24,11 +24,6 @@ public class CorridorSpawner : MonoBehaviour
     void Start()
     {
 		generator = new Generate (3, 3);
-
-        //Create Two Empty Corridors.
-        latestCorridor = CreateSection(initialCorridor, emptyCorridorPrefab);
-        latestCorridor = CreateSection(latestCorridor, emptyCorridorPrefab);
-        
     }
 
     void FixedUpdate()
@@ -41,30 +36,12 @@ public class CorridorSpawner : MonoBehaviour
     
     GameObject CreateRandomSection(GameObject latest)
     {
-        GameObject chosen = corridorPrefabs[Random.Range(0, corridorPrefabs.Length)];
 
-        GameObject newSection = CreateSection(latestCorridor, chosen);
-        return newSection;
-    }
-
-    GameObject CreateSection_EmptySection(float position)
-    {
-        //Para criar os dois corredores vazios no inicio.
-        GameObject newEmptyCorridor = Instantiate(emptyCorridorPrefab, new Vector3(0,0f,position), Quaternion.identity);
-        newEmptyCorridor.transform.parent = GameObject.Find(gameObject.name).transform;
-        return newEmptyCorridor;
-    }
-
-    GameObject CreateSection(GameObject previous, GameObject newSectionPrefab)
-    {
-        float previous_edge = previous.transform.position.z + previous.GetComponent<ObjectVariables>().CorridorLength / 2;
-        float newPosition = previous_edge + newSectionPrefab.GetComponent<ObjectVariables>().CorridorLength/2;
+		float newPosition = latest.transform.position.z + latest.GetComponent<ObjectVariables>().CorridorLength/2
+			+ 10f;
 
 		generator.GenerateSection ();
 		GameObject newSection = instantiateSection (newPosition);
-        //GameObject newSection = Instantiate(newSectionPrefab, new Vector3(0, 0f, newPosition), Quaternion.identity);
-        //newSection.transform.parent = GameObject.Find(gameObject.name).transform;
-
         return newSection;
     }
 
