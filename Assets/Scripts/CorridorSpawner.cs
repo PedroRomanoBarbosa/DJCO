@@ -59,43 +59,43 @@ public class CorridorSpawner : MonoBehaviour
 				case Generate.Types.Column:
 					gameObject = Instantiate (Column);
 					gameObject.transform.parent = newSection.transform;
-					gameObject.transform.localPosition = new Vector3 (5 * x - 5, 1, 5 * y);
+					gameObject.transform.localPosition = new Vector3 (5f * x - 5f, 0.5f, 6.5f * y);
 					break;
 				case Generate.Types.Bench:
 					gameObject = Instantiate (Bench);
 					gameObject.transform.parent = newSection.transform;
-					gameObject.transform.localPosition = new Vector3 (5 * x - 5, 2, 5 * y);
+					gameObject.transform.localPosition = new Vector3 (5f * x - 5f, 2f, 6.5f * y);
 					break;
 				case Generate.Types.Door:
 					gameObject = Instantiate (Door);
 					gameObject.transform.parent = newSection.transform;
-					gameObject.transform.localPosition = new Vector3 (5 * x - 5, 4, 5 * y);
+					gameObject.transform.localPosition = new Vector3 (5f * x - 5f + 2.1f, 3.5f, 6.5f * y);
 					break;
 				case Generate.Types.Coin:
 					gameObject = Instantiate (Coin);
 					gameObject.transform.parent = newSection.transform;
-					gameObject.transform.localPosition = new Vector3 (5 * x - 5, 2, 5 * y);
+					gameObject.transform.localPosition = new Vector3 (5f * x - 5f, 2f, 6.5f * y);
 					break;
 				case Generate.Types.BenchCoin:
 					gameObject = Instantiate (Bench);
 					gameObject.transform.parent = newSection.transform;
-					gameObject.transform.localPosition = new Vector3 (5 * x - 5, 2, 5 * y);
+					gameObject.transform.localPosition = new Vector3 (5f * x - 5f, 2f, 6.5f * y);
 					gameObject = Instantiate (Coin);
 					gameObject.transform.parent = newSection.transform;
-					gameObject.transform.localPosition = new Vector3 (5 * x - 5, 4, 5 * y);
+					gameObject.transform.localPosition = new Vector3 (5f * x - 5f, 4f, 6.5f * y);
 					break;
 				case Generate.Types.Beer:
 					gameObject = Instantiate (Beer);
 					gameObject.transform.parent = newSection.transform;
-					gameObject.transform.localPosition = new Vector3 (5 * x - 5, 0, 5 * y);
+					gameObject.transform.localPosition = new Vector3 (5f * x - 5f, 0f, 6.5f * y);
 					break;
 				case Generate.Types.BenchBeer:
 					gameObject = Instantiate (Bench);
 					gameObject.transform.parent = newSection.transform;
-					gameObject.transform.localPosition = new Vector3 (5 * x - 5, 0, 5 * y);
+					gameObject.transform.localPosition = new Vector3 (5f * x - 5f, 0f, 6.5f * y);
 					gameObject = Instantiate (Beer);
 					gameObject.transform.parent = newSection.transform;
-					gameObject.transform.localPosition = new Vector3 (5 * x - 5, 4, 5 * y);
+					gameObject.transform.localPosition = new Vector3 (5f * x - 5f, 4f, 6.5f * y);
 					break;
 				}
 			}
