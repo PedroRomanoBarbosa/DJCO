@@ -10,7 +10,9 @@ public class Generate {
 		Bench,
 		Door,
 		Coin,
-		BenchCoin
+		BenchCoin,
+		Beer,
+		BenchBeer
 	}
 	private enum Moves {
 		Up,
@@ -24,8 +26,8 @@ public class Generate {
 		Hard
 	}
 	private int numPlayerSpaces;
-	private List<KeyValuePair<int,int>> columnValidPositions, benchValidPositions, doorValidPositions, coinValidPositions;
-	private int difficulty, numObstacles, numCoins;
+	private List<KeyValuePair<int,int>> columnValidPositions, benchValidPositions, doorValidPositions, coinValidPositions, beerValidPositions;
+	private int difficulty, numObstacles, numCoins, numBeers;
 	private int playerY;
 	private Types[,] matrix;
 
@@ -84,6 +86,8 @@ public class Generate {
 		assignObstacles ();
 
 		assignCoins ();
+
+		assignBeers ();
 	}
 
 	private Moves[] GetPossibleMoves () {
@@ -177,24 +181,39 @@ public class Generate {
 		}
 	}
 
+	private void getValidBeerPositions () {
+		beerValidPositions = new List<KeyValuePair<int, int>> ();
+		for(int y = 0; y < columns - 1; y++) {
+			for(int x = 0; x < lines - 1; x++) {
+				if (matrix [y, x] == Types.Empty || matrix [y, x] == Types.Bench || matrix [y, x] == Types.Player) {
+					beerValidPositions.Add (new KeyValuePair<int, int>(x, y));
+				}
+			}
+		}
+	}
+
 	private void setDifficulty() {
 		difficulty = Random.Range ((int)Difficulties.NoBrainer, (int)Difficulties.Hard + 1);
 		switch (difficulty) {
 		case (int) Difficulties.NoBrainer:
 			numObstacles = Random.Range (0, 1 + 1);
 			numCoins = 0;
+			numBeers = 0;
 			break;
 		case (int) Difficulties.Easy:
 			numObstacles = Random.Range (1, 2 + 1);
 			numCoins = 1;
+			numBeers = Random.Range (0, 1 + 1);
 			break;
 		case (int) Difficulties.Medium:
 			numObstacles = Random.Range (2, 3 + 1);
 			numCoins = Random.Range (1, 2 + 1);
+			numBeers = Random.Range (0, 1 + 1);
 			break;
 		case (int) Difficulties.Hard:
 			numObstacles = Random.Range (3, 4 + 1);
 			numCoins = Random.Range (2, 3 + 1);
+			numBeers = Random.Range (0, 2 + 1);
 			break;
 		}
 	}
@@ -204,7 +223,7 @@ public class Generate {
 		numPlayerSpaces++;
 	}
 
-	/* TODO check rndom algorithm(it's causing errors) */
+	/* TODO check random algorithm(it's causing errors) */
 	private void assignObstacles() {
 		int counter = 0;
 		while (counter < numObstacles) {
@@ -226,6 +245,7 @@ public class Generate {
 		}
 	}
 
+	// TODO change this to be like the assignBeers method 
 	private void assignCoins() {
 		getValidCoinPositions ();
 		int counter = 0;
@@ -240,6 +260,27 @@ public class Generate {
 			}
 			coinValidPositions.RemoveAt (rand);
 			counter++;
+		}
+	}
+
+	private void assignBeers() {
+		int counter = 0;
+		bool valid = true;
+		while (counter < numBeers && valid) {
+			getValidBeerPositions ();
+			if (beerValidPositions.Count <= 0) {
+				valid = false;
+			} else {
+				int total = beerValidPositions.Count;
+				int rand = Random.Range (0, total);
+				KeyValuePair<int, int> position = beerValidPositions[rand];
+				if (matrix [position.Value, position.Key] == Types.Bench) {
+					matrix [position.Value, position.Key] = Types.BenchBeer;
+				} else {
+					matrix [position.Value, position.Key] = Types.Beer;
+				}
+				counter++;
+			}
 		}
 	}
 
