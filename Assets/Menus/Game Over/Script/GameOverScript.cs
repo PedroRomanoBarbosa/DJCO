@@ -11,6 +11,12 @@ public class GameOverScript : MonoBehaviour
      void Start ()
     {
         scoreText.text = "Score: " + score;
+        int oldHighScore = PlayerPrefs.GetInt("HighScore");
+        if(score > oldHighScore)
+        {
+            PlayerPrefs.SetInt("HighScore", score);
+            //Debug.Log(PlayerPrefs.GetInt("HighScore"));
+        }
     }
 	
 	void Update ()
