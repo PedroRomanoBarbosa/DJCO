@@ -21,7 +21,6 @@ public class GameGlobals : MonoBehaviour {
 
     void Start()
     {
-        textLives.text = "Lives :" + lives;
         textTime.text = "Time: 00:00";
         textScore.text = "ECTS: " + score;
     }
@@ -72,8 +71,6 @@ public class GameGlobals : MonoBehaviour {
 
     void UpdateUIText()
     {
-        //Update Lives
-        textLives.text = "Lives: " + lives;
         //Update Time
         if (((int)elapsedTime) % 60 < 10)
         {
