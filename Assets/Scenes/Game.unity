@@ -126,7 +126,7 @@ MonoBehaviour:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 20053809}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 4cca02ec2a3273941a6e8af66fd62515, type: 3}
   m_Name: 
@@ -1079,6 +1079,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d8b0eb80954724f8dbd785ee0f4b66d6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  effectSpeed: 30
+  effectDuration: 1
+  effectFadeSpeed: 10
 --- !u!1 &1370434184
 GameObject:
   m_ObjectHideFlags: 0
