@@ -56,7 +56,7 @@ public class GameGlobals : MonoBehaviour {
             {
                 gameOver = true;
                 isMoving = false;
-                textPressToBegin.text = "YOU LOST\nPress Space to Retry";
+				textPressToBegin.text = "YOU LOST\nFinal Score: " + score.ToString () + "\n\nPress Space to Retry";
             }
             
         }

@@ -60,13 +60,11 @@ public class CorridorSpawner : MonoBehaviour
 				int rand;
 				switch (type) {
 				case Generate.Types.Column:
-					gameObject = Instantiate (Column);
-					gameObject.transform.parent = newSection.transform;
+					gameObject = Instantiate (Column, newSection.transform);
 					gameObject.transform.localPosition = new Vector3 (5f * x - 5f, 0.5f, 6.5f * y);
 					break;
 				case Generate.Types.Bench:
-					gameObject = Instantiate (Bench);
-					gameObject.transform.parent = newSection.transform;
+					gameObject = Instantiate (Bench, newSection.transform);
 					gameObject.transform.localPosition = new Vector3 (5f * x - 5f, 2f, 6.5f * y);
 					rand = Random.Range (0, 3);
 					switch (rand) {
@@ -79,18 +77,15 @@ public class CorridorSpawner : MonoBehaviour
 					}
 					break;
 				case Generate.Types.Door:
-					gameObject = Instantiate (Door);
-					gameObject.transform.parent = newSection.transform;
+					gameObject = Instantiate (Door, newSection.transform);
 					gameObject.transform.localPosition = new Vector3 (5f * x - 5f + 2.1f, 3.5f, 6.5f * y);
 					break;
 				case Generate.Types.Coin:
-					gameObject = Instantiate (Coin);
-					gameObject.transform.parent = newSection.transform;
+					gameObject = Instantiate (Coin, newSection.transform);
 					gameObject.transform.localPosition = new Vector3 (5f * x - 5f, 2f, 6.5f * y);
 					break;
 				case Generate.Types.BenchCoin:
-					gameObject = Instantiate (Bench);
-					gameObject.transform.parent = newSection.transform;
+					gameObject = Instantiate (Bench, newSection.transform);
 					gameObject.transform.localPosition = new Vector3 (5f * x - 5f, 2f, 6.5f * y);
 					rand = Random.Range (0, 3);
 					switch (rand) {
@@ -101,18 +96,15 @@ public class CorridorSpawner : MonoBehaviour
 						gameObject.transform.Rotate(Vector3.up * -15, Space.Self);
 						break;
 					}
-					gameObject = Instantiate (Coin);
-					gameObject.transform.parent = newSection.transform;
+					gameObject = Instantiate (Coin, newSection.transform);
 					gameObject.transform.localPosition = new Vector3 (5f * x - 5f, 4f, 6.5f * y);
 					break;
 				case Generate.Types.Beer:
-					gameObject = Instantiate (Beer);
-					gameObject.transform.parent = newSection.transform;
+					gameObject = Instantiate (Beer, newSection.transform);
 					gameObject.transform.localPosition = new Vector3 (5f * x - 5f, 0f, 6.5f * y);
 					break;
 				case Generate.Types.BenchBeer:
-					gameObject = Instantiate (Bench);
-					gameObject.transform.parent = newSection.transform;
+					gameObject = Instantiate (Bench, newSection.transform);
 					gameObject.transform.localPosition = new Vector3 (5f * x - 5f, 0f, 6.5f * y);
 					rand = Random.Range (0, 3);
 					switch (rand) {
@@ -123,8 +115,7 @@ public class CorridorSpawner : MonoBehaviour
 						gameObject.transform.Rotate(Vector3.up * -15, Space.Self);
 						break;
 					}
-					gameObject = Instantiate (Beer);
-					gameObject.transform.parent = newSection.transform;
+					gameObject = Instantiate (Beer, newSection.transform);
 					gameObject.transform.localPosition = new Vector3 (5f * x - 5f, 4f, 6.5f * y);
 					break;
 				}
