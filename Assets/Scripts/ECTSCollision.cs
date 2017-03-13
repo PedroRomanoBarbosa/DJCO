@@ -8,7 +8,6 @@ public class ECTSCollision : MonoBehaviour {
 
     void Start () {
         game = GameObject.Find("GameController").GetComponent<GameGlobals>();
-
     }
 
     //Check if player collects THIS ECTS

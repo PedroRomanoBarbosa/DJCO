@@ -12,6 +12,7 @@ public class CorridorSpawner : MonoBehaviour
 	public GameObject Bench;
 	public GameObject Door;
 	public GameObject Coin;
+	public GameObject Beer;
 
     //Vars
     private GameObject latestCorridor;
@@ -103,6 +104,19 @@ public class CorridorSpawner : MonoBehaviour
 					gameObject.transform.parent = newSection.transform;
 					gameObject.transform.localPosition = new Vector3 (5 * x - 5, 2, 5 * y);
 					gameObject = Instantiate (Coin);
+					gameObject.transform.parent = newSection.transform;
+					gameObject.transform.localPosition = new Vector3 (5 * x - 5, 4, 5 * y);
+					break;
+				case Generate.Types.Beer:
+					gameObject = Instantiate (Beer);
+					gameObject.transform.parent = newSection.transform;
+					gameObject.transform.localPosition = new Vector3 (5 * x - 5, 0, 5 * y);
+					break;
+				case Generate.Types.BenchBeer:
+					gameObject = Instantiate (Bench);
+					gameObject.transform.parent = newSection.transform;
+					gameObject.transform.localPosition = new Vector3 (5 * x - 5, 0, 5 * y);
+					gameObject = Instantiate (Beer);
 					gameObject.transform.parent = newSection.transform;
 					gameObject.transform.localPosition = new Vector3 (5 * x - 5, 4, 5 * y);
 					break;
