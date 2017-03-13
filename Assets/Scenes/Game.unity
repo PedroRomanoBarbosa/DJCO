@@ -42,7 +42,7 @@ RenderSettings:
 LightmapSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 7
-  m_GIWorkflowMode: 0
+  m_GIWorkflowMode: 1
   m_GISettings:
     serializedVersion: 2
     m_BounceScale: 1
@@ -71,7 +71,8 @@ LightmapSettings:
     m_FinalGatherFiltering: 1
     m_FinalGatherRayCount: 256
     m_ReflectionCompression: 2
-  m_LightingDataAsset: {fileID: 0}
+  m_LightingDataAsset: {fileID: 112000001, guid: 32c9da2cc446e4256bff427b25e69764,
+    type: 2}
   m_RuntimeCPUUsage: 25
 --- !u!196 &4
 NavMeshSettings:
@@ -682,13 +683,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 27ee99a8bc1f883429f204870a424332, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  emptyCorridorPrefab: {fileID: 1553020452658990, guid: 77665c70e45300643a1e1d1cf46ef4ff,
+  emptyCorridorPrefab: {fileID: 1807086085614338, guid: cc6a5a90b2249e2439bdacd0dade48cd,
     type: 2}
   Column: {fileID: 1657031950737912, guid: 4c1bf97884d6245c2819c74b91fb6966, type: 2}
   Bench: {fileID: 1090157277824710, guid: 3db34e5165b484a06a6e3541353a0630, type: 2}
   Door: {fileID: 1982062234807692, guid: 439114dcab73d48aaaa66e91296dbe8c, type: 2}
   Coin: {fileID: 1156243135827412, guid: 5984574b7ab21fb48aa58f7d44497637, type: 2}
   Beer: {fileID: 1750457452653928, guid: 997bab7607cdb46058d3f093578cb285, type: 2}
+  latestCorridor: {fileID: 1232582499}
   initialCorridor: {fileID: 1232582499}
   corridorPrefabs:
   - {fileID: 1792504991827990, guid: 90e93ede0eb17bb45b97ae2b291f597e, type: 2}
