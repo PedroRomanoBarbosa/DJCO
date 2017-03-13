@@ -14,6 +14,13 @@ public class ECTSCollision : MonoBehaviour {
     void OnTriggerEnter (Collider other) {
         if (other.gameObject.CompareTag("Player")) {
             game.score += 1;
+			if (game.score == 10) {
+				game.difficulty = Generate.Difficulties.Easy;
+			} else if (game.score == 20) {
+				game.difficulty = Generate.Difficulties.Medium;
+			} else if (game.score == 40) {
+				game.difficulty = Generate.Difficulties.Hard;
+			}
             SoundScript.Instance.MakeCoinSound();
             Destroy(gameObject);
         }
