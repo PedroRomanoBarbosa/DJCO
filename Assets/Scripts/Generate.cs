@@ -172,8 +172,8 @@ public class Generate {
 
 	private void getValidCoinPositions () {
 		coinValidPositions = new List<KeyValuePair<int, int>> ();
-		for(int y = 0; y < columns - 1; y++) {
-			for(int x = 0; x < lines - 1; x++) {
+		for(int y = 0; y < columns; y++) {
+			for(int x = 0; x < lines; x++) {
 				if (matrix [y, x] == Types.Empty || matrix [y, x] == Types.Bench || matrix [y, x] == Types.Player) {
 					coinValidPositions.Add (new KeyValuePair<int, int>(x, y));
 				}
@@ -183,8 +183,8 @@ public class Generate {
 
 	private void getValidBeerPositions () {
 		beerValidPositions = new List<KeyValuePair<int, int>> ();
-		for(int y = 0; y < columns - 1; y++) {
-			for(int x = 0; x < lines - 1; x++) {
+		for(int y = 0; y < columns; y++) {
+			for(int x = 0; x < lines; x++) {
 				if (matrix [y, x] == Types.Empty || matrix [y, x] == Types.Bench || matrix [y, x] == Types.Player) {
 					beerValidPositions.Add (new KeyValuePair<int, int>(x, y));
 				}
