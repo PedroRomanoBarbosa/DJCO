@@ -1,0 +1,12 @@
+Para iniciar o jogo, basta correr o executável fornecido num dos seguintes links:
+	Windows: https://feupload.fe.up.pt/get/BKi7fHttKLmYthN
+	Mac: https://feupload.fe.up.pt/get/UlvnqCXj8TgzrKH
+
+O jogo está montado em Unity na versão 5.5.1. 
+É possível abri a pasta do código como um projecto de Unity. Este deve abrir com a cena "Game". 
+Depois, com os menus File -> Build Settings (->  Platform) -> Build, pode-se obter um executável.
+	Source: https://feupload.fe.up.pt/get/jrGrpDhFcvGULd1
+
+
+Video no youtube:
+	https://www.youtube.com/watch?v=Aqf9UKpwqE0
